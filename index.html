@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Easy Elasticsearch</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Easy Elasticsearch</h1>
+					<h3></h3>
+					<p>
+						<small>Find me : <a href="http://github.com/reshadman">github.com/reshadman</a> / <a href="http://twitter.com/shadman">@reshadman</a></small>
+					</p>
+					<p>
+						<img src="qrcode.png" width="128">
+					</p>
+				</section>
+
+				<section>
+					<h2>Elasticsearch Jargon</h2>
+					<p>
+						A high performance horizontally scalable search server, written in Java, based on Lucene. And the most important DEVELOPER FRIENDLY.
+					</p>
+				</section>
+
+				<section>
+					<h2>Who is using in Iran</h2>
+					<ol>
+						<li>Digikala</li>
+						<li>Mobinnet (with cassandra)</li>
+						<li>iBartar</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Who is using globally</h2>
+					<ol>
+						<li>Yelp</li>
+						<li>Stackoverflow</li>
+						<li>Wikipedia</li>
+						<li>Linkedin</li>
+						<li>And the lovely Github</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Full text search</h2>
+					<p>
+						Simply searching a long or small chain of words by matching words instead of characters in a boolean way.
+					</p>
+				</section>
+
+				<section>
+					<h2>The false positive problem</h2>
+					<p>
+						Problem of returning irrevalant results, with low-precision and low-recall. a simple example is the problem of stop words (like "in", "to") and stemming ( players vs player ).
+					</p>
+				</section>
+
+				<section>
+					<h2>Lucene and the inverted index</h2>
+					<ol>
+						<li>This is ali</li>
+						<li>This is reza</li>
+						<li>I am reza too</li>
+					</ol>
+					<ul>
+						<li>this => [0 , 1]</li>
+						<li>ali => [0]</li>
+						<li>reza => [2, 1]</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>The TF/IDF as the refree</h2>
+					<p>
+						A simple formula to express the imapct and the value of a matching substring in a horizontal and vertical way. (The impact of the substring in comparsion with the full stored record and also among all other records).
+					</p>
+				</section>
+
+				<section>
+					<h2>PARTIAL MATCHING | THE SQL WAY</h2>
+					<p>
+						The "LIKE" method in sql. low performance, brute force, and poor in multi token matching
+					</p>
+				</section>
+
+				<section>
+					<h2>TOKENIZING</h2>
+					<p>
+						The process of breaking sentences into multiple words, each word is considered as a token and is moved to its equivalant inverted index. all of the magic happens here how to break!
+					</p>
+				</section>
+
+
+
+
+				<section>
+					<h2>NGRAM TOKENS</h2>
+					<p>
+						Breaking words into collection of characters instead of words.
+						Alireza Ahmadi => [al][li][ir] ...
+					</p>
+				</section>
+
+				<section>
+					<h2>And THE EASY PARTIAL MATCHING</h2>
+					<p>
+						Edge ngram tokens are the king of partial matching!
+					</p>
+				</section>
+
+				<section>
+					<h2>Elasticsearch the Bads</h2>
+					<ol>
+						<li>Learning curve</li>
+						<li>Syncing data</li>
+						<li>Expensive server cost</li>
+						<li>The fucking io</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Elasticsearch the Goods</h2>
+					<ol>
+						<li>Solving any kind of search problem</li>
+						<li>Developer friendly</li>
+						<li>Horizontally scalable</li>
+						<li>A High performance NoSql storage</li>
+						<li>Easy to change, suitable for startups</li>
+						<li>And really fast</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Basic workflow</h2>
+					<ol>
+						<li>Query designing</li>
+						<li>Schema Designing</li>
+						<li>Mapping</li>
+						<li>Indexing</li>
+						<li>Querying the index</li>
+						<li>Optimizing</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>The Cassandra way</h2>
+					<ol>
+						<li>Query designing</li>
+						<li>Schema Designing for query</li>
+						<li>Mapping</li>
+						<li>Inserting the query</li>
+						<li>Filling the query instead of simple indexing</li>
+						<li>Querying like a boss</li>
+						<li>Optimizing (large data set)</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Query designing</h2>
+					<p>Simply the problem you want to solve. for instance "Searching in title of blog posts when a user enters some words inside the query box"</p>
+				</section>
+
+				<section>
+					<h2>Schema desining</h2>
+					<p>Making elasticsearch work with your query strategy. for instance for an autocomplete you will need an EdgeNgram tokenizer.
+						You willl create an analyzer for that and apply it to the <b>title</b> field of your blog post index.
+					</p>
+				</section>
+
+				<section>
+					<h2>Mapping</h2>
+					<p>The equivalant of <b>CREATE TABLE</b> in SQL. You tell elasticsearch how to store data.
+					</p>
+				</section>
+
+				<section>
+					<h2>Indexing</h2>
+					<p>The time consuming task of indexing your data to be set in the Schema.
+					</p>
+				</section>
+
+				<section>
+					<h2>Querying</h2>
+					<p>Process of matching a query against your index.
+					</p>
+				</section>
+
+				<section>
+					<h2>Elastic search at iBartar.com</h2>
+					<p>iBartar heavily uses Elasticsearch as read DB, Complex GIS queries, Aggregation, Fulltext searching and Autocomplete suggester.</p>
+				</section>
+
+				<section>
+					<h2>Previously on MySql</h2>
+					<h3>Problems</h3>
+					<ol>
+						<li>Weak support of Geo features</li>
+						<li>Slow on computational queries, like scoring functions</li>
+						<li>Join nightmare when searching related entities</li>
+						<li>Seriously, not a search solution
+					</ol>
+				</section>
+
+				<section>
+					<h2>Persian language and stemmers</h2>
+					<p>There were lots of problems when dealing with stemmers, how to search "کالانمای برتر" against "کالا نما برتر".</p>
+					<img src="kalanama.png">
+				</section>
+
+				<section>
+					<h2>Elasticsearch plugins</h2>
+					<p>Elasticsearch allows us to extend its functionality by Java based modules.</p>
+				</section>
+
+				<section>
+					<h2>False positive results at iBartar</h2>
+					<p>Minimum unwanted results, and maximize wanted results. The real fucking problem of fulltext search.</p>
+					<img src="falsepositive.png">
+				</section>
+
+				<section>
+					<h2>Synonyms</h2>
+					<p>Is there a really big difference between "Khatoon Pizza" and "Khatoon Fastfood" ?</p>
+					<img src="khatoon.png">
+				</section>
+
+				<section>
+					<h2>Completion suggester</h2>
+					<p>EdgeNgram easily allows us to make a fast completion suggester. Multi query API allows to perform multiple searches at a single I/O. The suggester api has been ported from Laravel to NodeJS for faster response and also implementing a WS API.</p>
+					<img src="completion.png">
+				</section>
+
+				<section>
+					<h2>Field Aggregators</h2>
+					<p>Elasticsearch aggregators provide an API to group results by a criteria. Allows to implement Faceted search.</p>
+					<img src="aggregation.png">
+				</section>
+
+				<section>
+					<h2>Location based queries</h2>
+					<p>Elasticsearch has great features for calculating distances, filtering results inside some coordinates or sorting results based on the distance to the given location.</p>
+					<img src="location.png">
+				</section>
+
+				<section>
+					<h2>Elasticsearch with Laravel</h2>
+					<p>Elasticsearch offers a richf REST api to do everything</p>
+				</section>
+
+				<section>
+					<h2>Elasticsearch PHP SDK</h2>
+					<p>A Guzzle based wrapper arround default REST api of elasticsearch. Personally I don't like it.</p>
+				</section>
+
+				<section>
+					<h2>Guzzle</h2>
+					<p>HTTP abstraction layer arround PHP's CURL. Fast, Well Maintained And featureful.</p>
+					<ol>
+						<li>Parallel requests</li>
+						<li>Asyncronus requests with RingPHP(An implementation of Clojure's Ring)</li>
+						<li>Awesome exception handling</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>In term of Software design</h2>
+					<p>A simple design for working with elasticsearch REST API.</p>
+					<ul>
+						<li>Value objects as request containers</li>
+						<li>Repository pattern as request performer</li>
+						<li>Presenter pattern for forming returning result from Elasticsearch APIs.</li>
+						<li>Service classes as managers, containing the business layer.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>A real Implmentation schema in PHP</h2>
+					<img src="files.png">
+				</section>
+
+				<section>
+					<h2>A port to NodeJS</h2>
+					<img src="node.png">
+					<h4>Problem ?</h4>
+					<p>Async behaviour of node in I/O, makes it difficult to implement the previous pattern. the solution is something like function pipeline in angular(like <b>.then</b> or <b>.error</b> functions).</p>
+				</section>
+
+				<section>
+					<h2>Movie Finder Example</h2>
+					<p>We will create a movie list and try to search for movie titles.
+					</p>
+					<ol>
+						<li>Creating index</li>
+						<li>Creating schema</li>
+						<li>Bulk api</li>
+						<li>Indexing data</li>
+						<li>Querying</li>
+					</ol>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+				</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
